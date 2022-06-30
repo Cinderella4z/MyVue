@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<div id="app">
+  <input v-model="name">
+  <div>{{name}}</div>
+  <div v-show="show">{{age}}</div>
+  <div class="box" v-if="show" @click="changeShow"></div>
+ 
+</div>
+  
+</body>
+<script src="./index.js"></script>
+<script>
+  const app=new Vue({
+    el:"#app",
+   data(){
+    return {
+      name:'zzq',
+      age:'18',
+      show:true
+    }
+   },
+    methods:{
+      changeShow(){
+        console.log(this);
+        this.show=!this.show
+      }
+    }
+  })
+
+  console.log(app);
+
+</script>
+<style>
+  .box{
+    background-color: pink;
+    width: 200px;
+    height: 200px;
+  }
+  .box1{
+    width: 200px;
+    height: 200px;
+    background-color: palegreen;
+  }
+  .box2{
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+  }
+</style>
+</html>
